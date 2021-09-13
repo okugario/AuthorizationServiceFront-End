@@ -4,26 +4,28 @@ import "antd/dist/antd.css";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import "./App.css";
+import { ApiFetch } from "./Helpers";
 function App() {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
-  };
+  const [form] = Form.useForm();
+
   return (
-    <div className="login-shadow">
-      <Form
+    <div className="body">
+      <form
+        form={form}
+        onFinish={() => {
+          form.submit();
+        }}
         method="POST"
-        action="/authenticate"
+        action="authenticate"
         name="normal_login"
-        className="login-form "
+        className="form "
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
       >
-        <img className="login-img" src="img/logo.jpg" />
+        <img className="form_title" src="img/logo.jpg" />
         <Form.Item
           name="login"
-          className="login-form-input"
           rules={[
             {
               required: false,
@@ -35,11 +37,11 @@ function App() {
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder="Логин"
             type="text"
+            className="form_input"
           />
         </Form.Item>
         <Form.Item
           name="pass"
-          className="login-form-input"
           rules={[
             {
               required: false,
@@ -48,21 +50,18 @@ function App() {
           ]}
         >
           <Input
+            className="form_input"
             prefix={<LockOutlined className="site-form-item-icon" />}
             placeholder="Пароль"
             type="password"
           />
         </Form.Item>
         <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="login-form-button"
-          >
+          <Button type="primary" htmlType="submit" className="form_button">
             Вход
           </Button>
         </Form.Item>
-      </Form>
+      </form>
     </div>
   );
 }

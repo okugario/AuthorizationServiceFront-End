@@ -1,71 +1,40 @@
-#App .login-form {
-  width: 250px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
-  border-radius: 5px;
-  background-color: white;
-}
-#App .login-form-input {
-  width: 98%;
-}
-
-body,
-html {
-  background: #eff3f6;
+.body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+.form {
+  width: 300px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #ccc;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+.form_title {
+  margin: 0 0 32px 15px;
+  align-items: center;
+}
+.form_button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 16xp;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: center;
+  display: flex;
+  margin: auto;
+}
+.form_input {
   width: 100%;
-  height: 100%;
-}
-
-#App .login-form-button {
-  width: 100%;
-}
-#App .login-shadow {
-  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
-}
-#App .login-img {
-  margin-bottom: 10%;
-}
-.MatteGlass {
-  box-sizing: border-box;
-  display: inline-block;
-  box-shadow: 0 0 1rem 0 rgba(41, 39, 39, 0.2);
-  border-radius: 3px;
-  position: relative;
-  z-index: 1;
-  background: inherit;
-  overflow: hidden;
-}
-
-.MatteGlass:before {
-  content: "";
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(241, 241, 241, 0.5);
-  filter: blur(10px);
-  margin: -20px;
-}
-#TrackPlayer {
-  position: absolute;
-  bottom: 0%;
-  padding-bottom: 20px;
-  margin-left: 30%;
-}
-#MapButtonBar {
-  position: absolute;
-}
-#GeozoneEditor {
-  position: absolute;
-  right: 0%;
+  padding: 0 0 10px 0;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: transparent;
+  outline: none;
 }
